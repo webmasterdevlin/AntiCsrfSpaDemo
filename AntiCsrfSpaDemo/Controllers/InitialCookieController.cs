@@ -8,10 +8,10 @@ namespace AntiCsrfSpaDemo.Controllers;
 [AllowAnonymous]
 [IgnoreAntiforgeryToken]
 [Route("api/[controller]")]
-public class InitialController : ApiController
+public class InitialCookieController : ApiController
 {
     [HttpGet]
-    public IActionResult InitializeWithCookie()
+    public IActionResult GetInitialCookie()
     {
         return Ok(new {message="first request"});
     }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {api} from "../api-config";
 
 export class Counter extends Component {
   static displayName = Counter.name;
@@ -14,14 +13,6 @@ export class Counter extends Component {
     this.setState({
       currentCount: this.state.currentCount + 1
     });
-  }
-
-  async onCookieRequest ()  {
-    await api.get("initial");
-  }
-
-  componentDidMount() {
-    this.onCookieRequest().then()
   }
 
   render() {
