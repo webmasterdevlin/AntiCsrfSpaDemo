@@ -4,6 +4,7 @@ namespace AntiCsrfSpaDemo.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[ValidateAntiForgeryToken]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]

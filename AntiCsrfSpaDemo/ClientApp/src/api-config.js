@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import axios from "axios";
 
 const api = axios.create({
@@ -6,13 +5,17 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((requestConfig) => {
-    const cookie = Cookies.get("XSRF-TOKEN");
+    const cookie = getCookie("XSRF-TOKEN");
     if (cookie && cookie.length) {
         requestConfig.headers.common["X-XSRF-TOKEN"] = cookie
     }
-
     return requestConfig;
 });
 
 export { api };
 
+export function getCookie(key) {
+    const regExpString = `(?:(?:^|.*;\\s*)${key}\\s*=\\s*([^;]*).*$)|^.*$`
+    const regExp = new RegExp(regExpString)
+    return decodeURIComponent(document.cookie.replace(regExp, '$1'))
+}
