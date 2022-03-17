@@ -1,11 +1,10 @@
-﻿using AntiCsrfSpaDemo.Controllers.Base;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace AntiCsrfSpaDemo.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class WeatherForecastController : ApiController
+public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
     {
