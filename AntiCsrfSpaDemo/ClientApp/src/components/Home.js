@@ -3,14 +3,6 @@ import {api} from "../api-config";
 
 export class Home extends Component {
   static displayName = Home.name;
-
-    async onCookieRequest ()  {
-        await api.get("initialcookie");
-    }
-
-    componentDidMount() {
-        this.onCookieRequest().then()
-    }
   
   render () {
     return (

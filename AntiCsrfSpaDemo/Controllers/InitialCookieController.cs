@@ -11,8 +11,5 @@ namespace AntiCsrfSpaDemo.Controllers;
 public class InitialCookieController : ApiController
 {
     [HttpGet]
-    public IActionResult GetInitialCookie()
-    {
-        return Ok(new {message="first request"});
-    }
+    public IActionResult GetInitialCookie() => Ok(new {message="first request"});
 }

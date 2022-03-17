@@ -28,7 +28,7 @@ app.Use((context, next) =>
     var path = context.Request.Path.Value;
     if (path == null || !string.Equals(path, "/", StringComparison.OrdinalIgnoreCase) &&
         !string.Equals(path, "/index.html", StringComparison.OrdinalIgnoreCase) &&
-        path.IndexOf("/api/", StringComparison.OrdinalIgnoreCase) == -1)
+        !path.Contains("/api/", StringComparison.OrdinalIgnoreCase))
     {
         return next(context);
     }
